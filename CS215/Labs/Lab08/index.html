@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Cookson Lab 8</title>
+        <script type="" src="https://kit.fontawesome.com/27c00b2d48.js" crossorigin="anonymous"></script> <!--This is for the caret on my navigation bar.  We were permitted to use Font Awesome in previous sessions.-->
+        <script type="text/javascript" src="./validate.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../CSS/CooksonLabs.css"/>
+    </head>
+    <!--'header', 'nav', 'section', 'aside', and 'footer' undefined in XHTML-->
+    <body>
+        <header>
+            <img class="left" src="../../Images/Pepper.jpg" alt="My dog Pepper sitting pretty in a chair"/>
+            <h1 class="middle">
+                CS 215 - Summer 2022 <br />
+                Lab 8: My SQL Database Design <br/>
+                Created by Laura Cookson
+            </h1>
+            <img class="right" src="../../Images/Radar.jpg" alt="My dog Radar looking back while keeping watch out the window"/>
+            <nav>
+                <div class="navbar">
+                    <a href="../../">Home Page</a>
+                    <div class="dropdown">
+                        <button class="dropButton">Lab 8 Links&nbsp;<i class="fa-solid fa-caret-down"></i></button>
+                        <div class="dropdownContent">
+                            <a href="./ljc806.txt">SQL Command Log</a>
+                            <a href="./students.sql">students.sql</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropButton">Labs&nbsp;<i class="fa-solid fa-caret-down"></i></button>
+                        <div class="dropdownContent">
+                            <a href="../Lab01/">Lab 1</a>
+                            <a href="../Lab02/">Lab 2</a>
+                            <a href="../Lab03/">Lab 3</a>
+                            <a href="../Lab04/">Lab 4</a>
+                            <a href="../Lab04/signup.html">Lab 4 JS</a>
+                            <a href="../Lab05/">Lab 5</a>
+                            <a href="../Lab05/signup.html">Lab 5 DOM</a>
+                            <a href="../Lab06/">Lab 6</a>
+                            <a href="../Lab06/signup.html">Lab 6 DOM2</a>
+                            <a href="../Lab07/">Lab 7</a>
+                            <a href="../Lab07/200388154-ERD.pdf">Lab 7 ERD</a>
+                            <a href="./">Lab 8</a>
+                            <a href="./ljc806.txt">Lab 8 SQL Log</a>
+                            <a href="../Lab09/">Lab 9</a>
+                            <a href="../Lab10/">Lab 10</a>
+                            <a href="../Lab11/">Lab 11</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropButton">Assignments&nbsp;<i class="fa-solid fa-caret-down"></i></button>
+                        <div class="dropdownContent">
+                            <a href="../../Assignments/Assign1/200388154-Assignment1.pdf">Assignment 1</a>
+                            <a href="../../Assignments/Assign2/basic_html_pages/mainPage.html">Assignment 2</a>
+                            <a href="../../Assignments/Assign3/basic_html_pages/mainPage.html">Assignment 3</a>
+                            <a href="../../Assignments/Assign4/basic_html_pages/mainPage.html">Assignment 4</a>
+                            <a href="../../Assignments/Assign5/">Assignment 5</a>
+                            <a href="../../Assignments/Assign6/">Assignment 6</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropButton">Validations&nbsp;<i class="fa-solid fa-caret-down"></i></button>
+                        <div class="dropdownContent">
+                            <!--These validations are for the files that are connected to this page-->
+                            <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Labs/Lab08/">index.html</a>
+                            <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Labs/Lab06/css/CooksonLabs.css">CooksonLabs.css</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <h2>About Laura</h2>
+            <p style="margin-top: 0px">
+                I moved to Saskatchewan in 2008 from British Columbia, where I was born and raised in Penticton. I graduated high school before many of my classmates were even conceived, in June 2000. I moved to the greater Vancouver area in April 2004. I graduated from BCIT (British Columbia Institute of Technology) with a DiplTech in FinMan (Diploma of Technology in Financial Management with a Professional Accounting major) in 2006. I worked in the accounting industry for ten years before deciding to return for a Bachelor's degree.  I worked full-time while attending part-time for three years and began attending school full-time in Fall 2019.<br/><br/>I chose a Computer Science degree over a Business degree because I have always been interested in technology and thought it would provide me with the most career options. My original plan was to use it as the entry requirement for the CPA (Certified Professional Accountant) program. Still, I have started considering a potential career in teaching at the University Level. </p>
+
+            <p style="text-align:center"><i>"Do what you feel in your heart to be right, for you will be criticized anyway."</i><br/> <b>Eleanor Roosevelt.</b></p>
+            
+        </section>
+        <aside>
+            <h2>Current Courses (Spring/Summer 2022)</h2>
+            <table>
+                <tr>
+                    <th style="width:100px">Course Number</th>
+                    <th>Course Name</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Co-op Semester 5</td>
+                </tr>
+                <tr>
+                    <td>CS 215</td>
+                    <td>Web and Database Programming</td>
+                </tr>
+            </table>
+        </aside>
+        <hr />
+        <div>
+            <h2>Completed Courses</h2>
+            <!--Table notes can be found in Lab01 index.html (LC)-->
+            <table>
+                <tr>
+                    <th>Semester</th>
+                    <th style="width: 100px">Course Number</th>
+                    <th>Course Name</th>
+                </tr>
+                <tr>
+                    <td >Winter 2017</td>
+                    <td>Film 100</td>
+                    <td>The Art of Motion Pictures</td>
+                </tr>
+                <tr>
+                    <td>Spring 2017</td>
+                    <td>ENGL 100</td>
+                    <td>Critical Reading and Writing I</td>
+                </tr>
+                <tr>
+                    <td>Summer 2017</td>
+                    <td>PSYC 102</td>
+                    <td>Introductory Psychology: Biological and Cognitive Focus</td>
+                </tr>
+                <tr>
+                    <td>Fall 2017</td>
+                    <td>ASTR 101</td>
+                    <td>Introduction to Astronomy</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Winter 2018</td>
+                    <td>CS 100</td>
+                    <td>Introduction to Computers</td>
+                </tr>
+                <tr>
+                    <td>ENGL 110</td>
+                    <td>Critical Reading and Writing II</td>
+                </tr>
+                <tr>
+                    <td>Fall 2018</td>
+                    <td>MATH 110</td>
+                    <td>Calculus I</td>
+                </tr>
+                <tr>
+                    <td>Winter 2019</td>
+                    <td>STAT 160</td>
+                    <td>Introductory Statistics</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Fall 2019</td>
+                    <td>MATH 111</td>
+                    <td>Calculus II</td>
+                </tr>
+                <tr>
+                    <td>MATH 122</td>
+                    <td>Linear Algebra I</td>
+                </tr>
+                <tr>
+                    <td>CS 110</td>
+                    <td>Programming and Problem Solving</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">Winter 2020</td>
+                    <td>CS 115</td>
+                    <td>Object-Oriented Design</td>
+                </tr>
+                <tr>
+                    <td>CS 201</td>
+                    <td>Introduction to Digital Systems</td>
+                </tr>
+                <tr>
+                    <td>CS 280</td>
+                    <td>Risk and Reward in the Information Society</td>
+                </tr>
+                <tr>
+                    <td>CTCH 310AD</td>
+                    <td>Introduction to Computer Game and VR Design</td>
+                </tr>
+                <tr>
+                    <td>Spring/Summer 2020</td>
+                    <td colspan="2">Co-op Semester 1</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Fall 2020</td>
+                    <td>CS 490AB</td>
+                    <td>User Interfaces for Databases</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Co-op Semester 2</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Winter 2021</td>
+                    <td>CS 210</td>
+                    <td>Data Structures and Abstractions</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Co-op Semester 3</td>
+                </tr>
+                <tr>
+                    <td>Spring/Summer 2021</td>
+                    <td colspan="2">Co-op Semester 4</td>
+                </tr>
+                <tr>
+                    <td rowspan="5">Fall 2021</td>
+                    <td>CS 203</td>
+                    <td>Java Programming and Applications</td>
+                </tr>
+                <tr>
+                    <td>CS 340</td>
+                    <td>Advanced Data Structures and Algorithm Design</td>
+                </tr>
+                <tr>
+                    <td>CS 350</td>
+                    <td>Programming Language Concepts</td>
+                </tr>
+                <tr>
+                    <td>KIN 170</td>
+                    <td>Lifestyle, Health and Wellness</td>
+                </tr>
+                <tr>
+                    <td>MATH 221</td>
+                    <td>Introduction to Proofs and Problem Solving</td>
+                </tr>
+                <tr>
+                    <td rowspan="5">Winter 2022<br/>(Withdrew)</td>
+                    <td>CS 215</td>
+                    <td>Web and Database Programming</td>
+                </tr>
+                <tr>
+                    <td>CS 301</td>
+                    <td>Digital Systems Architecture</td>
+                </tr>
+                <tr>
+                    <td>CS 310</td>
+                    <td>Discrete Computal Structure</td>
+                </tr>
+                <tr>
+                    <td>CS 335</td>
+                    <td>Computer Networks</td>
+                </tr>
+                <tr>
+                    <td>MATH 321</td>
+                    <td>Number Theory I</td>
+                </tr>
+            </table>
+        </div>
+        <footer>
+            <p>&copy; 2022 Laura Cookson.  All right reserved</p>
+        </footer>
+        <script type="text/javascript" src="../Lab06/signup-r.js"></script>
+    </body>
+</html>

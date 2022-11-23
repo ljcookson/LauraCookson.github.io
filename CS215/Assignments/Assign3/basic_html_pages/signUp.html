@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"> <!--We were directed to validate using XHTML1.1, so I am using the headers from Labs 1 & 2-->
+    <head>
+        <!--<meta charset = "utf-8"> This causes two errors, without it I get two warnings.  I would welcome recommendations-->
+        <title>Cooky Polls - Sign Up</title>
+        <link rel="stylesheet" type="text/css" href="../css/cookson.css"/>
+        <script type="text/javascript" src="../scripts/validating.js"> </script>  
+    </head>
+    <body class="overallContainer">
+        <div class="top">
+            <div class="headerLeft">
+                <div class="headerTopTwoLeft">Sign-up</div>
+            </div>
+            <div class="headerRight right">
+                <img class="headerImage" src="../images/Icon1.png" alt="Survey Icon" />
+            </div>
+            <div class="headerBottom">Create your account below to begin creating polls</div>
+        </div>
+        <div class="center">
+            <form id="SignUpForm" class="signContainer" action="./mgmt.html">
+                <div class="signFields">
+                    <div class="signErrors">
+                        <p>First Name:</p>
+                        <input class="signFieldBox" type="text" id="fname" name="fname"/>
+                    </div>
+                    <div class="signErrors">
+                        <p>Last Name:</p>
+                        <input class="signFieldBox" type="text" id="lname" name="lname"/>
+                    </div>
+                    <div class="signErrors">
+                        <label id="msg_userName" class="errorMessage"></label>
+                        <p class="signFieldName">UserName:</p>
+                        <input class="signFieldBox" type="text" id="uname" name="uname"/>
+                    </div>
+                    <div class="signErrors">
+                        <label id="msg_password" class="errorMessage"></label>
+                        <p class="signFieldName">Password:</p>
+                        <input type="password" id="pword" name="pword"/>
+                    </div>
+                    <div class="signErrors">
+                        <label id="msg_confirmPassword" class="errorMessage"></label>
+                        <p class="signFieldName">Confirm Password: </p>
+                        <input type="password" id="cpword" name="cpword"/>
+                    </div>
+                    <div class="signErrors">
+                        <label id="msg_email" class="errorMessage"></label>
+                        <p class="signFieldName">Email Address:</p>
+                        <input type="email" id="email" name="email"/><!--Type Error on validation, it does not like 'email'  I have opted to leave it.-->
+                    </div>
+                </div>
+                <div class="signAvatarGrid">
+                    <div class="signAvatarHeadBody">
+                        <p class="signupAvatarHead">Choose an Avatar</p>
+                        <label class="avatarImages">
+                            <input type="radio" name="avatar"/>
+                            <img class="image" src="../images/Avatar1.JPG" alt="Avatar choice 1"/>
+                        </label>
+                        <label class="avatarImages">
+                            <input type="radio" name="avatar"/>
+                            <img class="image" src="../images/Avatar2.JPG" alt="Avatar choice 2"/>
+                        </label>
+                        <label class="avatarImages">
+                            <input type="radio" name="avatar"/>
+                            <img class="image" src="../images/Avatar3.JPG" alt="Avatar choice 3"/>
+                        </label>
+                        <label class="avatarImages">
+                            <input type="radio" name="avatar"/>
+                            <img class="image" src="../images/Avatar4.JPG" alt="Avatar choice 4"/>
+                        </label>
+                        <label class="avatarImages">
+                            <input type="radio" name="avatar"/>
+                            <img class="image" src="../images/Avatar5.JPG" alt="Avatar choice 5"/>
+                        </label>
+                    </div>
+                    <div class="signErrors signupAvatarError">
+                        <label id="msg_avatar" class="errorMessage"></label>
+                    </div>
+                </div>
+                <div class="signButtons">
+                    <div class="signButtonsLeft">
+                        <div class="signButtonsLeftLeft">
+                            <div id="display_info" class="errorMessage"></div>
+                        </div>
+                        <div class="signButtonsLeftRight">
+                            <input type="submit" value="Sign-up" />
+                        </div>
+                    </div>
+                    <div class="signButtonsRight">
+                        <input type="button" value="Cancel" onclick="document.location.href='mainPage.html' "/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="bottom">
+            <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Assignments/Assign3/basic_html_pages/signUp.html">Validate 'signUp.html'</a>
+        </div>
+        <script type = "text/javascript"  src = "../scripts/registrations.js" ></script>
+    </body>
+</html>

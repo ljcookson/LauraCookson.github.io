@@ -1,0 +1,33 @@
+Main Page:
+    Retrieve 5 most recent Active Polls:
+        SELECT DISTINCT Questions.question, Answers.answer, COUNT(Results.answer_ID), Polls.lastVoteDateTime  FROM Polls Left JOIN Questions ON (Polls.poll_ID=Questions.question_ID) INNER JOIN Answers ON (Questions.question_ID=Answers.question_ID) LEFT JOIN Results ON (Answers.answer_ID=Results.answer_ID) WHERE closeDateTime >= (SELECT CURRENT_TIMESTAMP) Group By Questions.question_ID, Answers.answer_ID ORDER BY lastVoteDateTime DESC LIMIT 17;
+
+Login Form: 
+    Given the username and password, retrieve the User ID, matching screenname, and avatar graphic
+    If the username and password pair do not match, return an empty result set
+        SELECT user_ID, userName, avatar FROM Users WHERE email="email" AND pword="pword";
+
+Poll Management Page:
+    Given a specific user ID, retrieve all of the user's polls (question, answer alternatives, number of votes for each alternative, and date/time of most recent vote)
+        SELECT Questions.question, Answers.answer, COUNT(Results.answer_ID), Polls.lastVoteDateTime FROM Polls LEFT JOIN Questions ON (Polls.poll_id=Questions.poll_id) INNER JOIN Answers ON (Questions.question_id=Answers.question_ID) LEFT JOIN Results ON (Answers.answer_ID=Results.answer_ID) WHERE Polls.user_ID="1" GROUP BY Answers.answer_id;
+
+Poll Votes Page: 
+    Given a specific poll ID, retreive the question and answer alternatives
+        SELECT Questions.question, Answers.answer FROM Polls INNER JOIN Questions ON (Polls.poll_ID=Questions.poll_ID) LEFT JOIN Answers ON (Questions.question_ID=Answers.question_ID) WHERE Polls.poll_id="4";
+
+Poll Results Page:
+    Given a specific poll ID, retrieve the question, answers, number of votes for each alternative, and date/time of most recent vote.
+        SELECT Questions.question, Answers.answer, COUNT(Results.answer_ID), Polls.lastVoteDateTime FROM Polls LEFT JOIN Questions ON (Polls.poll_id=Questions.poll_id) INNER JOIN Answers ON (Questions.question_id=Answers.question_ID) LEFT JOIN Results ON (Answers.answer_ID=Results.answer_ID) WHERE Polls.poll_ID="6" GROUP BY Answers.answer_id;
+
+
+
+
+--Other Potential Queries--
+
+SELECT COUNT(IF(answer_ID = "1",1,NULL)) Answer1Result, COUNT(IF(answer_ID="2",1,NULL)) Answer2Result, COUNT(IF(answer_ID="3",1,NULL)) Answer3Result, COUNT(IF(answer_ID="4",1,NULL)) Answer4Result, COUNT(IF(answer_id="5",1,NULL)) Answer5Result FROM Results;
+
+SELECT Answers.answer, COUNT(Results.answer_ID) FROM Answers INNER JOIN Results ON Results.answer_ID=Answers.answer_ID GROUP BY Answers.answer;
+
+SELECT Answers.answer FROM Answers INNER JOIN Results ON Results.answer_ID=Answers.answer_ID;
+
+SELECT answer_ID, COUNT(answer_ID) FROM Results GROUP BY answer_ID;

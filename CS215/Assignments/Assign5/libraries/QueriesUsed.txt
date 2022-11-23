@@ -1,0 +1,7 @@
+DESCRIBE Answers; --Shows the fields of a particular table--
+ALTER TABLE Answers RENAME COLUMN question_ID TO poll_ID; --Changes the name of a Field--
+UPDATE Polls SET question=(SELECT question FROM Questions WHERE poll_ID="2") WHERE poll_ID="2"; --Moves the data from one table to another--
+SELECT * FROM Questions; --Shows all the data stored in a table--
+ALTER TABLE Polls ADD question VARCHAR(110); --Adds a field to a table--
+SELECT Polls.question, Answers.answer, COUNT(Results.answer_ID) as results, Polls.lastVote FROM Polls INNER JOIN Answers ON (Polls.poll_ID=Answers.poll_ID) LEFT JOIN Results ON (Results.answer_ID=Answers.answer_ID)  WHERE Polls.user_ID=1 GROUP BY Polls.poll_ID, Answers.answer_ID ORDER BY createdDate DESC; --Shows all the polls of a given user--
+ALTER TABLE Polls MODIFY COLUMN closeDate DATE;

@@ -1,0 +1,132 @@
+/*  This is my CSS file for my personalized styling
+    File Name:  cooksonLabs.css
+    Author:     Laura Cookson
+    Student ID: 200388154*/
+
+header{
+    border: thick solid gray;
+    outline: 8px groove darkgray;
+    background-color: lightgray;
+    width:auto;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto auto auto auto auto; 
+    color:black;
+}
+.left{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    float: left;
+    margin-right: auto;
+}
+.middle, .lab_middle{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    max-height: 120px;
+    margin: auto;
+}
+.right{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    float: right;
+    margin-left: auto;
+}
+.navigate{
+    grid-column: 1/4;
+    grid-row: 2/3;
+    border-top: thick solid gray;
+    text-align: center;
+}
+.lab_navigate{
+    grid-column: 1/4;
+    grid-row: 1/2;
+    text-align: center;
+}
+.labs{
+    grid-column: 1/4;
+    grid-row: 2/3;
+    border-top: thick solid gray;
+    text-align: center;
+}
+.lab_labs{
+    grid-column: 1/4;
+    grid-row: 3/4;
+    border-top: thick solid gray;
+    text-align: center;
+}
+.assigns_navigate{
+    grid-column: 1/4;
+    grid-row: 4/5;
+    border-top: thick solid gray;
+    text-align: center;
+}
+.validate{
+    grid-column: 1/4;
+    grid-row: 5/6;
+    border-top: thick solid gray;
+    text-align: right;
+    text-align: center;
+}
+.lab_validate{
+    grid-column: 1/4;
+    grid-row: 3/4;
+    text-align: right;
+    text-align: center;
+}
+.lab_home_validate{
+    grid-column: 1/4;
+    grid-row: 5/6;
+    border-top: thick solid gray;
+    text-align: center;
+}
+h1{
+    color: darkblue;
+    text-shadow: 2px 2px 5px royalblue;
+    text-align: center;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: lavenderblush;
+}
+h2{
+    color:indigo;
+    font-size: 150%;
+    margin: 0px;
+    font-weight: bold;
+    text-decoration:underline dotted;
+    text-align: center;
+}
+h3, .classes{
+    margin: 0px;
+}
+ul{
+    margin-top: 0px;
+}
+img{
+    max-width: 100%;
+    max-height: 120px;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    height: 100%;
+    width: auto;
+}
+table, td, th{
+    border: 2px double darkblue;
+    border-collapse: collapse;
+}
+table{
+    width: auto;
+    background-color: lavender;
+    margin: auto;
+    text-align:initial;
+}
+th{
+    background-color: indigo;
+    color: lavender;
+    font-size: 18px;
+}
+.classes{
+    text-align: center;
+}

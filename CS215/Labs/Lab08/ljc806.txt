@@ -1,0 +1,381 @@
+TITLE:      SQL LOG FILE
+COURSE:     CS 215 (SUMMER 2022)
+LAB NUMBER: 08
+STUDENT ID: 200388154
+NAME:       LAURA COOKSON
+FILE NAME:  ljc806.txt
+
+Step 1: Load the student table by using the source command
+    Traverse my files to the directory that I would like to work in:
+        cd php_web/Labs/Lab08
+    Download the students.sql file:
+        scp hercules:/net/data/ftp/pub/class/215/basic_sql/students.sql ./
+            Terminal Code: {
+                titan[111]% scp hercules:/net/data/ftp/pub/class/215/basic_sql/students.sql ./
+                students.sql                                         100% 7499     1.8MB/s   00:00 
+            }
+
+    Change the permissions of all the files in Lab08:
+        chmod 644 *   
+        ls -l(Confirm permissions changed):
+            Terminal Code: {
+                titan[112]% ls -l
+                total 20
+                -rw-r--r-- 1 ljc806 csugrd 12049 Jul 28 13:24 index.html
+                -rw-r--r-- 1 ljc806 csugrd     0 Jul 28 13:05 ljc806.txt
+                -rw------- 1 ljc806 csugrd  7499 Jul 28 13:27 students.sql
+                titan[113]% chmod 644 *
+                titan[114]% ls -l
+                total 20
+                -rw-r--r-- 1 ljc806 csugrd 12049 Jul 28 13:24 index.html
+                -rw-r--r-- 1 ljc806 csugrd     0 Jul 28 13:05 ljc806.txt
+                -rw-r--r-- 1 ljc806 csugrd  7499 Jul 28 13:27 students.sql
+            }
+
+    Log into webdev & my SQL and look at database names
+        ssh webdev
+        entered webdev password
+        mysql -p ljc806
+        entered mysql password
+        show databases;
+            Terminal Code: {
+                mysql> show databases;
+                +--------------------+
+                | Database           |
+                +--------------------+
+                | information_schema |
+                | ljc806             |
+                +--------------------+
+                2 rows in set (0.00 sec)
+            }
+
+    Load table:
+        source ~/php_web/Labs/Lab08/students.sql
+        describe students;
+            Terminal Code: {
+                mysql> describe students;
+                +--------------------+--------------+------+-----+---------+-------+
+                | Field              | Type         | Null | Key | Default | Extra |
+                +--------------------+--------------+------+-----+---------+-------+
+                | student_ID         | varchar(30)  | NO   |     | NULL    |       |
+                | first_Name         | varchar(30)  | NO   |     | NULL    |       |
+                | middle_Name        | varchar(30)  | YES  |     | NULL    |       |
+                | last_Name          | varchar(30)  | NO   |     | NULL    |       |
+                | email              | varchar(100) | NO   |     | NULL    |       |
+                | course_Name        | varchar(30)  | NO   |     | NULL    |       |
+                | course_Description | varchar(255) | NO   |     | NULL    |       |
+                | marks              | double       | NO   |     | NULL    |       |
+                +--------------------+--------------+------+-----+---------+-------+
+                8 rows in set (0.00 sec)
+            }
+
+Step 2: Fix incorrect data:
+    1.  SELECT * FROM students WHERE first_name='Ahmed';
+            Terminal Code: {
+                mysql> SELECT * FROM students WHERE first_name='Ahmed';
+                +------------+------------+-------------+-----------+-------------------------+-------------+----------------------------------+-------+
+                | student_ID | first_Name | middle_Name | last_Name | email                   | course_Name | course_Description               | marks |
+                +------------+------------+-------------+-----------+-------------------------+-------------+----------------------------------+-------+
+                | 200266200  | Ahmed      | Al          | Abbad     | alabba200cs.uregina.ca  | CS100       | Introduction to Computers        |  90.5 |
+                | 200266200  | Ahmed      | Al          | Abbad     | alabba200cs.uregina.ca  | CS110       | Programming and Problem Solving  |    85 |
+                | 200266200  | Ahmed      | Al          | Abbad     | alabba200@cs.uregina.ca | CS210       | Data Structures and Abstractions |    90 |
+                +------------+------------+-------------+-----------+-------------------------+-------------+----------------------------------+-------+
+            }
+        UPDATE students SET email='alabba200@cs.uregina.ca' WHERE first_name='Ahmed';
+            Terminal Code: 
+            {
+                mysql> UPDATE students SET email='alabba200@cs.uregina.ca' WHERE first_name='Ahmed';   
+                Query OK, 2 rows affected (0.00 sec)
+                Rows matched: 3  Changed: 2  Warnings: 0
+            }
+        SELECT * FROM students WHERE first_name='Ahmed'; (to confirm change successful)
+            Terminal Code: 
+            {
+                mysql> SELECT * FROM students WHERE first_name='Ahmed';
+                +------------+------------+-------------+-----------+-------------------------+-------------+----------------------------------+-------+
+                | student_ID | first_Name | middle_Name | last_Name | email                   | course_Name | course_Description               | marks |
+                +------------+------------+-------------+-----------+-------------------------+-------------+----------------------------------+-------+
+                | 200266200  | Ahmed      | Al          | Abbad     | alabba200@cs.uregina.ca | CS100       | Introduction to Computers        |  90.5 |
+                | 200266200  | Ahmed      | Al          | Abbad     | alabba200@cs.uregina.ca | CS110       | Programming and Problem Solving  |    85 |
+                | 200266200  | Ahmed      | Al          | Abbad     | alabba200@cs.uregina.ca | CS210       | Data Structures and Abstractions |    90 |
+                +------------+------------+-------------+-----------+-------------------------+-------------+----------------------------------+-------+
+                3 rows in set (0.00 sec)
+            }
+
+    2.  SELECT * FROM students WHERE last_name='';
+            Terminal Code: {
+                mysql> SELECT * FROM students WHERE last_name='';
+                +------------+------------+-------------+-----------+--------------------+-------------+----------------------------------+-------+
+                | student_ID | first_Name | middle_Name | last_Name | email              | course_Name | course_Description               | marks |
+                +------------+------------+-------------+-----------+--------------------+-------------+----------------------------------+-------+
+                | 200266210  | Yupeng     | Xu          |           | x210@cs.uregina.ca | CS100       | Introduction to Computers        |    89 |
+                | 200266210  | Yupeng     | Xu          |           | x210@cs.uregina.ca | CS210       | Data Structures and Abstractions |    92 |
+                +------------+------------+-------------+-----------+--------------------+-------------+----------------------------------+-------+
+                2 rows in set (0.00 sec)
+            }
+        UPDATE students SET middle_name='', last_name='Xu' WHERE last_name='';
+            Terminal Code: {
+                mysql> UPDATE students SET middle_name='', last_name='Xu' WHERE last_name='';
+                Query OK, 2 rows affected (0.00 sec)
+                Rows matched: 2  Changed: 2  Warnings: 0
+            }
+        SELECT * FROM students WHERE last_name='';(to confirm change successful)
+            Terminal Code: {
+                mysql> SELECT * FROM students WHERE last_name='';
+                Empty set (0.00 sec)
+            }
+        SELECT * FROM students WHERE last_name='Xu';(to confirm change successful)
+            Terminal Code: {
+                mysql> SELECT * FROM students WHERE last_name='Xu';
+                +------------+------------+-------------+-----------+--------------------+-------------+----------------------------------+-------+
+                | student_ID | first_Name | middle_Name | last_Name | email              | course_Name | course_Description               | marks |
+                +------------+------------+-------------+-----------+--------------------+-------------+----------------------------------+-------+
+                | 200266210  | Yupeng     |             | Xu        | x210@cs.uregina.ca | CS100       | Introduction to Computers        |    89 |
+                | 200266210  | Yupeng     |             | Xu        | x210@cs.uregina.ca | CS210       | Data Structures and Abstractions |    92 |
+                +------------+------------+-------------+-----------+--------------------+-------------+----------------------------------+-------+
+                2 rows in set (0.00 sec)
+            }
+
+    3.  SELECT * FROM students WHERE course_Name='CS215';
+            Terminal Code: {
+                mysql> SELECT * FROM students WHERE course_Name='CS215';
+                +------------+------------+-------------+-------------+--------------------------+-------------+----------------------------------+-------+
+                | student_ID | first_Name | middle_Name | last_Name   | email                    | course_Name | course_Description               | marks |
+                +------------+------------+-------------+-------------+--------------------------+-------------+----------------------------------+-------+
+                | 200266202  | Qaswar     |             | Rai         | ali202@cs.uregina.ca     | CS215       | Web Oriented Programming         |  82.6 |
+                | 200266203  | Nicholas   |             | Phongsavath | phosan203@cs.uregina.ca  | CS215       | Web Oriented Programming         |   100 |
+                | 200266206  | John       |             | Erick       | eric20j206@cs.uregina.ca | CS215       | Web Oriented Programming         |    83 |
+                | 200266207  | Jody-Lee   | Van         | DerVelden   | vanervj207@cs.uregina.ca | CS215       | Web Oriented Programming         |  85.6 |
+                | 200266209  | Ke         |             | Tao         | taoke209@cs.uregina.ca   | CS215       | Data Structures and Abstractions |  86.5 |
+                | 200266212  | Mandeep    |             | Ghotra      | gho212@cs.uregina.ca     | CS215       | Web Oriented Programming         |    98 |
+                +------------+------------+-------------+-------------+--------------------------+-------------+----------------------------------+-------+
+                6 rows in set (0.00 sec)
+            }
+        UPDATE students SET course_Description='Web and Database Programming' WHERE course_Name='CS215';
+            Terminal Code: {
+                mysql> UPDATE students SET course_Description='Web and Database Programming' WHERE course_Name='CS215';
+                Query OK, 6 rows affected (0.00 sec)
+                Rows matched: 6  Changed: 6  Warnings: 0
+            }
+        SELECT * FROM students WHERE course_Name='CS215');(to confirm change successful)
+            Terminal Code: {
+                mysql> SELECT * FROM students WHERE course_Name='CS215';
+                +------------+------------+-------------+-------------+--------------------------+-------------+------------------------------+-------+
+                | student_ID | first_Name | middle_Name | last_Name   | email                    | course_Name | course_Description           | marks |
+                +------------+------------+-------------+-------------+--------------------------+-------------+------------------------------+-------+
+                | 200266202  | Qaswar     |             | Rai         | ali202@cs.uregina.ca     | CS215       | Web and Database Programming |  82.6 |
+                | 200266203  | Nicholas   |             | Phongsavath | phosan203@cs.uregina.ca  | CS215       | Web and Database Programming |   100 |
+                | 200266206  | John       |             | Erick       | eric20j206@cs.uregina.ca | CS215       | Web and Database Programming |    83 |
+                | 200266207  | Jody-Lee   | Van         | DerVelden   | vanervj207@cs.uregina.ca | CS215       | Web and Database Programming |  85.6 |
+                | 200266209  | Ke         |             | Tao         | taoke209@cs.uregina.ca   | CS215       | Web and Database Programming |  86.5 |
+                | 200266212  | Mandeep    |             | Ghotra      | gho212@cs.uregina.ca     | CS215       | Web and Database Programming |    98 |
+                +------------+------------+-------------+-------------+--------------------------+-------------+------------------------------+-------+
+                6 rows in set (0.00 sec)
+            }
+
+    4.  SELECT * FROM students WHERE course_Name='CS000';
+            Terminal Code: {
+                mysql> SELECT * FROM students WHERE course_Name='CS000';
+                +------------+------------+-------------+-----------+------------------------+-------------+-------------------------+-------+
+                | student_ID | first_Name | middle_Name | last_Name | email                  | course_Name | course_Description      | marks |
+                +------------+------------+-------------+-----------+------------------------+-------------+-------------------------+-------+
+                | 200266209  | Ke         |             | Tao       | taoke209@cs.uregina.ca | CS000   
+                    | 00000000000000000000000 |     0 |
+                +------------+------------+-------------+-----------+------------------------+-------------+-------------------------+-------+
+                1 row in set (0.00 sec)
+            }
+        DELETE FROM students WHERE course_Name='CS000';
+            Terminal Code: {
+                mysql> DELETE FROM students WHERE course_Name='CS000';
+                                Query OK, 1 row affected (0.00 sec)
+            }
+        SELECT * FROM students WHERE course_Name='CS000';(to confirm change successful)
+            Terminal Code: {
+                mysql> SELECT * FROM students WHERE course_Name='CS000';
+                Empty set (0.00 sec)
+            }
+
+Step 3: Decompose the students table into three new tables
+    1.  CREATE TABLE Student_INFO (
+            student_ID INT NOT NULL AUTO_INCREMENT,
+            first_name VARCHAR(50),
+            middle_name VARCHAR(50),
+            last_name VARCHAR (50),
+            email_Address VARCHAR(75),
+            PRIMARY KEY (student_ID)
+        );
+            Terminal Code: {
+                mysql> CREATE TABLE Student_INFO (
+                    ->             student_ID INT NOT NULL AUTO_INCREMENT,
+                    ->             first_name VARCHAR(50),
+                    ->             middle_name VARCHAR(50),
+                    ->             last_name VARCHAR (50),
+                    ->             email_Address VARCHAR(75),
+                    ->             PRIMARY KEY (student_ID)
+                    ->         );
+                Query OK, 0 rows affected (0.01 sec)
+            }
+        describe Student_INFO; (verify table created)
+            Terminal Code: {
+                mysql> describe Student_INFO
+                    -> ;
+                +---------------+-------------+------+-----+---------+----------------+
+                | Field         | Type        | Null | Key | Default | Extra          |
+                +---------------+-------------+------+-----+---------+----------------+
+                | student_ID    | int         | NO   | PRI | NULL    | auto_increment |
+                | first_name    | varchar(50) | YES  |     | NULL    |                |
+                | middle_name   | varchar(50) | YES  |     | NULL    |                |
+                | last_name     | varchar(50) | YES  |     | NULL    |                |
+                | email_Address | varchar(75) | YES  |     | NULL    |                |
+                +---------------+-------------+------+-----+---------+----------------+
+                5 rows in set (0.00 sec)
+            }
+    2.  CREATE TABLE Courses (
+            course_Name VARCHAR(10) NOT NULL,
+            course_Description VARCHAR(50),
+            PRIMARY KEY (course_Name)
+        );
+            Terminal Code: {
+                mysql> CREATE TABLE Courses (
+                    ->             course_Name VARCHAR(10) NOT NULL,
+                    ->             course_Description VARCHAR(50),
+                    ->             PRIMARY KEY (course_Name)
+                    ->         );
+                Query OK, 0 rows affected (0.01 sec)
+            }
+        describe Courses; (verify table created)
+            Terminal Code: {
+                mysql> describe Courses;
+                +--------------------+-------------+------+-----+---------+-------+
+                | Field              | Type        | Null | Key | Default | Extra |
+                +--------------------+-------------+------+-----+---------+-------+
+                | course_Name        | varchar(10) | NO   | PRI | NULL    |       |
+                | course_Description | varchar(50) | YES  |     | NULL    |       |
+                +--------------------+-------------+------+-----+---------+-------+
+                2 rows in set (0.00 sec)
+            }
+    3.  CREATE TABLE Marks (
+            student_ID INT,
+            course_Name VARCHAR(10),
+            marks INT NOT NULL,
+            FOREIGN KEY(student_ID) REFERENCES Student_INFO (student_ID),
+            FOREIGN KEY(course_Name) REFERENCES Courses(course_Name)
+        );
+            Terminal Code: {
+                mysql> CREATE TABLE Marks (
+                    ->             student_ID INT,
+                    ->             course_Name VARCHAR(10),
+                    ->             marks INT NOT NULL,
+                    ->             FOREIGN KEY(student_ID) REFERENCES Student_INFO (student_ID),
+                    ->             FOREIGN KEY(course_Name) REFERENCES Courses(course_Name)
+                    ->         );
+                Query OK, 0 rows affected (0.02 sec)
+            }
+        describe Marks; (verify table created)
+            Terminal Code: {
+                                mysql> describe Marks;
+                +-------------+-------------+------+-----+---------+-------+
+                | Field       | Type        | Null | Key | Default | Extra |
+                +-------------+-------------+------+-----+---------+-------+
+                | student_ID  | int         | YES  | MUL | NULL    |       |
+                | course_Name | varchar(10) | YES  | MUL | NULL    |       |
+                | marks       | int         | NO   |     | NULL    |       |
+                +-------------+-------------+------+-----+---------+-------+
+                3 rows in set (0.00 sec)
+            }
+
+Step 4: Extract records from students table and insert into new tables:
+    1.  Populate Student_INFO Table:
+        INSERT INTO Student_INFO(student_ID, first_name,middle_name,last_name,email_Address) SELECT DISTINCT student_ID, first_name, middle_name,last_name,email FROM students;
+            Terminal Code: {
+                mysql> INSERT INTO Student_INFO(student_ID, first_name,middle_name,last_name,email_Address) SELECT DISTINCT student_ID, first_name, middle_name,last_name,email FROM students;
+                Query OK, 12 rows affected (0.00 sec)
+                Records: 12  Duplicates: 0  Warnings: 0
+            }
+        SELECT * FROM Student_INFO;
+            Terminal Code: {
+                mysql> SELECT * FROM Student_INFO;
+                +------------+------------+-------------+-------------+--------------------------+
+                | student_ID | first_name | middle_name | last_name   | email_Address            |     
+                +------------+------------+-------------+-------------+--------------------------+     
+                |  200266200 | Ahmed      | Al          | Abbad       | alabba200@cs.uregina.ca  |     
+                |  200266202 | Qaswar     |             | Rai         | ali202@cs.uregina.ca     |     
+                |  200266203 | Nicholas   |             | Phongsavath | phosan203@cs.uregina.ca  |     
+                |  200266204 | Nikki      |             | Pawlowski   | pawlow204@cs.uregina.ca  |     
+                |  200266205 | Nathan     |             | Ellis       | elli205@cs.uregina.ca    |     
+                |  200266206 | John       |             | Erick       | eric20j206@cs.uregina.ca |     
+                |  200266207 | Jody-Lee   | Van         | DerVelden   | vanervj207@cs.uregina.ca |     
+                |  200266208 | Sabrina    |             | Tram        | tra200s208@cs.uregina.ca |     
+                |  200266209 | Ke         |             | Tao         | taoke209@cs.uregina.ca   |     
+                |  200266210 | Yupeng     |             | Xu          | x210@cs.uregina.ca       |     
+                |  200266211 | Chidinma   |             | Ukabam      | ukaba211@cs.uregina.ca   |     
+                |  200266212 | Mandeep    |             | Ghotra      | gho212@cs.uregina.ca     |     
+                +------------+------------+-------------+-------------+--------------------------+     
+                12 rows in set (0.00 sec)
+            }
+    2.  Populate Courses Table:
+        INSERT INTO Courses(course_Name,course_Description) SELECT DISTINCT course_Name,course_Description FROM students;
+            Terminal Code: {
+                mysql> INSERT INTO Courses(course_Name,course_Description) SELECT DISTINCT course_Name,course_Description FROM students;
+                Query OK, 4 rows affected (0.00 sec)
+                Records: 4  Duplicates: 0  Warnings: 0
+            } 
+        SELECT * FROM Courses;
+            Terminal Code: {
+                mysql> SELECT * FROM Courses;
+                +-------------+----------------------------------+
+                | course_Name | course_Description               |
+                +-------------+----------------------------------+
+                | CS100       | Introduction to Computers        |
+                | CS110       | Programming and Problem Solving  |
+                | CS210       | Data Structures and Abstractions |
+                | CS215       | Web and Database Programming     |
+                +-------------+----------------------------------+
+                4 rows in set (0.00 sec)
+            }
+    3.  Populate Marks Table:
+        INSERT INTO Marks(student_ID, course_Name, marks) SELECT DISTINCT student_ID, course_Name, marks FROM students;
+            Terminal Code: {
+                mysql> INSERT INTO Marks(student_ID, course_Name, marks) SELECT DISTINCT student_ID, course_Name, marks FROM students;
+                Query OK, 30 rows affected (0.00 sec)
+                Records: 30  Duplicates: 0  Warnings: 0
+            }
+        SELECT * FROM Marks;
+            Terminal Code: {
+                mysql> SELECT * FROM Marks;
+                +------------+-------------+-------+
+                | student_ID | course_Name | marks |
+                +------------+-------------+-------+
+                |  200266200 | CS100       |    90 |
+                |  200266200 | CS110       |    85 |
+                |  200266200 | CS210       |    90 |
+                |  200266202 | CS100       |    72 |
+                |  200266202 | CS110       |    59 |
+                |  200266202 | CS215       |    83 |
+                |  200266203 | CS100       |   100 |
+                |  200266203 | CS215       |   100 |
+                |  200266204 | CS100       |    65 |
+                |  200266204 | CS210       |    92 |
+                |  200266205 | CS110       |    92 |
+                |  200266205 | CS210       |    70 |
+                |  200266206 | CS100       |    86 |
+                |  200266206 | CS110       |    87 |
+                |  200266206 | CS210       |    81 |
+                |  200266206 | CS215       |    83 |
+                |  200266207 | CS100       |    59 |
+                |  200266207 | CS110       |    50 |
+                |  200266207 | CS210       |    67 |
+                |  200266207 | CS215       |    86 |
+                |  200266208 | CS100       |    70 |
+                |  200266208 | CS110       |    80 |
+                |  200266208 | CS210       |    88 |
+                |  200266209 | CS110       |    66 |
+                |  200266209 | CS210       |    78 |
+                |  200266209 | CS215       |    86 |
+                |  200266210 | CS100       |    89 |
+                |  200266210 | CS210       |    92 |
+                |  200266211 | CS100       |    99 |
+                |  200266212 | CS215       |    98 |
+                +------------+-------------+-------+
+                30 rows in set (0.00 sec)
+            }

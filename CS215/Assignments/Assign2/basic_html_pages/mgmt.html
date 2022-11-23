@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"> <!--We were directed to validate using XHTML1.1, so I am using the headers from Labs 1 & 2-->
+    <head>
+        <!--<meta charset = "utf-8"> This causes two errors, without it I get two warnings.  I would welcome recommendations-->
+        <title>Cooky Polls - My Polls</title>
+        <link rel="stylesheet" type="text/css" href="../css/cookson.css"/>
+    </head>
+    <body class="overallContainer">
+        <div class="top">
+            <div class="headerLeft">
+                <div class="headerTopTwoLeft">
+                    My Polls
+                </div>
+            </div>
+            <div class="headerRight right">
+                Hi Laura! <!--This will be the user's first name-->
+                <input type="button" value="Logout" onclick="document.location.href='mainPage.html' "/>
+            </div>
+            <div class="headerBottom">Create new or View, Vote on, or see the results of your existing polls</div>
+        </div>
+        <div class="center">
+            <div class="mgmtContainer">
+                <div class="mgmtPolls"><!--This data will be replaced with the questions of the polls-->
+                    <input type="radio" name="myPolls" class="mgmtPollsRadio" id="Question1"/>
+                    <label for="Question1">
+                        <span class="mgmtPollsQA">
+                            <span class="mgmtPollsQuestion">Question:</span>
+                            <span class="mgmtPollsAnswer">Answer:</span>
+                            <span class="mgmtPollsQText">
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                            </span>
+                            <span class="mgmtPollsA"> 
+                                <span class="mgmtPollsAText">
+                                    <span>1. Ut enim ad minim veniam, </span><br/>
+                                    <span>2. quis nostrud exercitation </span><br/>
+                                    <span>3. ullamco laboris nisi ut aliquip </span><br/>
+                                    <span>4. ex ea commodo consequat. </span><br/>
+                                </span>
+                                <span class="mgmtPollsGraphs">
+                                    <span style="background: linear-gradient(90deg, lightblue 0 50%, aliceblue 50% 100%);">50/100</span><br/>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 5%, aliceblue 5% 100%);">5/100</span><br/>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 10%, aliceblue 10% 100%);">10/100</span><br/>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 35%, aliceblue 35% 100%);">35/100</span>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="mgmtPollsCreateVote">
+                            <span class="mgmtPollsCreate">
+                                <span>Date Created: <span class="mgmtPollsCreateVoteBoxes">July 7, 2022</span></span>
+                            </span>
+                            <span class="mgmtPollsVote">
+                                <span>Date of Most Recent Vote: <span class="mgmtPollsCreateVoteBoxes">July 10, 2022</span></span>
+                            </span>
+                        </span>
+                    </label>
+                    <input type="radio" name="myPolls" class="mgmtPollsRadio" id="Question2"/>
+                    <label for="Question2">
+                        <span class="mgmtPollsQA">
+                            <span class="mgmtPollsQuestion">Question:</span>
+                            <span class="mgmtPollsAnswer">Answer:</span>
+                            <span class="mgmtPollsQText">
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                            </span>
+                            <span class="mgmtPollsA"> 
+                                <span class="mgmtPollsAText">
+                                    <span>1. Ut enim ad minim veniam, </span>
+                                    <span>2. quis nostrud exercitation </span>
+                                    <span>3. ullamco laboris nisi ut aliquip </span>
+                                </span>
+                                <span class="mgmtPollsGraphs">
+                                    <span style="background: linear-gradient(90deg, lightblue 0 40%, aliceblue 40% 100%);">40/100</span>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 15%, aliceblue 15% 100%);">15/100</span>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 45%, aliceblue 45% 100%);">45/100</span>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="mgmtPollsCreateVote">
+                            <span class="mgmtPollsCreate">
+                                <span>Date Created: <span class="mgmtPollsCreateVoteBoxes">July 4, 2022</span></span>
+                            </span>
+                            <span class="mgmtPollsVote">
+                                <span>Date of Most Recent Vote: <span class="mgmtPollsCreateVoteBoxes">July 8, 2022</span></span>
+                            </span>
+                        </span>
+                    </label>
+                    <input type="radio" name="myPolls" class="mgmtPollsRadio" id="Question3"/>
+                    <label for="Question3">
+                        <span class="mgmtPollsQA">
+                            <span class="mgmtPollsQuestion">Question:</span>
+                            <span class="mgmtPollsAnswer">Answer:</span>
+                            <span class="mgmtPollsQText">
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                            </span>
+                            <span class="mgmtPollsA"> 
+                                <span class="mgmtPollsAText">
+                                    <span>1. Ut enim ad minim veniam, </span>
+                                    <span>2. quis nostrud exercitation </span>
+                                    <span>3. ullamco laboris nisi ut aliquip </span>
+                                    <span>4. ex ea commodo consequat. </span>
+                                    <span>5. Duis aute irure dolor in reprehenderit</span>
+                                </span>
+                                <span class="mgmtPollsGraphs">
+                                    <span style="background: linear-gradient(90deg, lightblue 0 10%, aliceblue 10% 100%);">10/100</span>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 25%, aliceblue 25% 100%);">25/100</span>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 17%, aliceblue 17% 100%);">17/100</span>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 28%, aliceblue 28% 100%);">28/100</span>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 20%, aliceblue 20% 100%);">20/100</span>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="mgmtPollsCreateVote">
+                            <span class="mgmtPollsCreate">
+                                <span>Date Created: <span class="mgmtPollsCreateVoteBoxes">June 15, 2022</span></span>
+                            </span>
+                            <span class="mgmtPollsVote">
+                                <span>Date of Most Recent Vote: <span class="mgmtPollsCreateVoteBoxes">July 1, 2022</span></span>
+                            </span>
+                        </span>
+                    </label>
+                    <input type="radio" name="myPolls" class="mgmtPollsRadio" id="Question4"/>
+                    <label for="Question4">
+                        <span class="mgmtPollsQA">
+                            <span class="mgmtPollsQuestion">Question:</span>
+                            <span class="mgmtPollsAnswer">Answer:</span>
+                            <span class="mgmtPollsQText">
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                            </span>
+                            <span class="mgmtPollsA"> 
+                                <span class="mgmtPollsAText">
+                                    <span>1. Ut enim ad minim veniam, </span>
+                                    <span>2. quis nostrud exercitation </span>
+                                </span>
+                                <span class="mgmtPollsGraphs">
+                                    <span style="background: linear-gradient(90deg, lightblue 0 67%, aliceblue 67% 100%);">67/100</span>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 33%, aliceblue 33% 100%);">33/100</span>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="mgmtPollsCreateVote">
+                            <span class="mgmtPollsCreate">
+                                <span>Date Created: <span class="mgmtPollsCreateVoteBoxes">May, 2022</span></span>
+                            </span>
+                            <span class="mgmtPollsVote">
+                                <span>Date of Most Recent Vote: <span class="mgmtPollsCreateVoteBoxes">June 24, 2022</span></span>
+                            </span>
+                        </span>
+                    </label>
+                    <input type="radio" name="myPolls" class="mgmtPollsRadio" id="Question5"/>
+                    <label for="Question5">
+                        <span class="mgmtPollsQA">
+                            <span class="mgmtPollsQuestion">Question:</span>
+                            <span class="mgmtPollsAnswer">Answer:</span>
+                            <span class="mgmtPollsQText">
+                                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                            </span>
+                            <span class="mgmtPollsA"> 
+                                <span class="mgmtPollsAText">
+                                    <span>1. Ut enim ad minim veniam, </span><br/>
+                                    <span>2. quis nostrud exercitation </span><br/>
+                                    <span>3. ullamco laboris nisi ut aliquip </span><br/>
+                                    <span>4. ex ea commodo consequat. </span>
+                                </span>
+                                <span class="mgmtPollsGraphs">
+                                    <span style="background: linear-gradient(90deg, lightblue 0 13%, aliceblue 13% 100%);">13/100</span>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 22%, aliceblue 22% 100%);">22/100</span>
+                                    <span style="background: linear-gradient(90deg, lightblue 0 53%, aliceblue 53% 100%);">53/100</span><span style="background: linear-gradient(90deg, lightblue 0 12%, aliceblue 12% 100%);">12/100</span>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="mgmtPollsCreateVote">
+                            <span class="mgmtPollsCreate">
+                                <span>Date Created: <span class="mgmtPollsCreateVoteBoxes">July 7, 2022</span></span>
+                            </span>
+                            <span class="mgmtPollsVote">
+                                <span>Date of Most Recent Vote: <span class="mgmtPollsCreateVoteBoxes">July 10, 2022</span></span>
+                            </span>
+                        </span>
+                    </label>
+                </div>
+                <div class="mgmtPollsButtons">
+                    <div class="mgmtPollsButtonsLeft">
+                        <input type="button" value="Create New Poll" onclick="document.location.href='create.html' "/>
+                    </div>
+                    <div class="mgmtPollsButtonsMiddle">
+                        <input type="button" value="Vote" onclick="document.location.href='vote.html' "/>
+                    </div>
+                    <div class="mgmtPollsButtonsRight">
+                        <input type="button" value="Results" onclick="document.location.href='results.html' "/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Assignments/Assign2/basic_html_pages/mgmt.html">Validate 'mgmt.html'</a>
+        </div>
+
+    </body>
+</html>

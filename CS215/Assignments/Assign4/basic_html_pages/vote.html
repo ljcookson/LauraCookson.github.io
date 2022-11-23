@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"> <!--We were directed to validate using XHTML1.1, so I am using the headers from Labs 1 & 2-->
+    <head>
+        <!--<meta charset = "utf-8"> This causes two errors, without it I get two warnings.  I would welcome recommendations-->
+        <title>Cooky Polls - Vote</title>
+        <link rel="stylesheet" type="text/css" href="../css/cookson.css"/>
+    </head>
+    <body class="overallContainer">
+        <div class="top">
+            <div class="headerLeft">
+                <div class="headerTopTwoLeft">
+                    Vote
+                </div>
+            </div>
+            <div class="headerRight right">
+                <img class="headerImage" src="../images/Icon1.png" alt="Survey Icon" />
+            </div>
+            <div class="headerBottom">Vote on a poll</div>
+        </div>
+        <div class="center">
+            <div class="voteContainer">
+                <div class="voteQuestion">
+                    <div class="voteQuestionHead">Question:&nbsp;</div>
+                    <div class="voteQuestionBox">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </div>
+                </div>
+                <div class="voteAnswer">
+                    <div class="voteAnswerHead">Answers:&nbsp;<br/></div>
+                    <div class="voteAnswerNum">
+                        <input type="radio" name="votePolls" class="voteRadio" id="A1"/>
+                        <label for="A1">
+                            <span class="voteAnswerNumText">
+                                <span>1.&nbsp;</span>
+                            </span>
+                            <span class="voteAnswerBox">
+                                <span>Ut enim ad minim veniam, </span>
+                            </span>
+                        </label>
+                        <input type="radio" name="votePolls" class="voteRadio" id="A2"/>
+                        <label for="A2">
+                            <span class="voteAnswerNumText">
+                                <span>2.&nbsp;</span>
+                            </span>
+                            <span class="voteAnswerBox">
+                                <span>quis nostrud exercitation </span>
+                            </span>
+                        </label>
+                        <input type="radio" name="votePolls" class="voteRadio" id="A3"/>
+                        <label for="A3">
+                            <span class="voteAnswerNumText">
+                                <span>3.&nbsp;</span>
+                            </span>
+                            <span class="voteAnswerBox">
+                                <span>ullamco laboris nisi ut aliquip </span>
+                            </span>
+                        </label>
+                        <input type="radio" name="votePolls" class="voteRadio" id="A4"/>
+                        <label for="A4">
+                            <span class="voteAnswerNumText">
+                                <span>4.&nbsp;</span>
+                            </span>
+                            <span class="voteAnswerBox">
+                                <span>ex ea commodo consequat. </span>
+                            </span>
+                        </label>
+                        <input type="radio" name="votePolls" class="voteRadio" id="A5"/>
+                        <label for="A5">
+                            <span class="voteAnswerNumText">
+                                <span>5.&nbsp;</span>
+                            </span>
+                            <span class="voteAnswerBox">
+                                <span>Duis aute irure dolor in reprehenderit</span>
+                            </span>
+                        </label>
+                        
+                    </div>
+                </div>
+                <div class="voteButtons">
+                    <div class="voteButtonsLeft">
+                        <input type="button" value="Cast Vote" onclick="document.location.href='results.html' "/>
+                    </div>
+                    <div class="voteButtonsMiddle">
+                        <input type="button" value="Results" onclick="document.location.href='results.html' "/>
+                    </div>
+                    <div class="voteButtonsRight">
+                        <input type="button" value="Cancel" onclick="document.location.href='mgmt.html' "/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Assignments/Assign4/basic_html_pages/vote.html">Validate 'vote.html'</a>
+        </div>
+
+    </body>
+</html>

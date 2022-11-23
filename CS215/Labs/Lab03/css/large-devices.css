@@ -1,0 +1,58 @@
+/*  CSS file for large devices
+    File Name:  large-devices.css
+    Author:     Laura Cookson
+    Student ID: 200388154*/
+    
+footer,section,article, aside{
+    border:1px solid grey;
+    margin:5px;
+    margin-bottom:15px;
+    padding:8px;
+    background-color:white;
+}
+
+nav, footer {
+    clear: both;
+    color:white;
+    background-color:gray;
+    margin-bottom:5px;
+}
+
+
+section {
+    background-color:#ddd;
+    float: left;
+    width: 60%;
+}
+
+aside {
+    background-color:silver;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    margin-left: 62.5%;
+    width: 35.7%;
+}
+
+/*footer {
+    float: bottom;Results in validation error. Left in to have footer span the page
+}*/
+
+nav ul{
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li{
+	display:inline;
+	padding: 0 2%;
+	margin: 0;
+	border-left: 2px solid black;
+}
+
+nav ul li:first-child{
+	border-width: 0px;
+}
+
+
+/* */
+

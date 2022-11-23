@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"> <!--We were directed to validate using XHTML1.1, so I am using the headers from Labs 1 & 2-->
+    <head>
+        <!--<meta charset = "utf-8"> This causes two errors, without it I get two warnings.  I would welcome recommendations-->
+        <title>Cooky Polls - New Poll</title>
+        <link rel="stylesheet" type="text/css" href="../css/cookson.css"/>
+        <script type="text/javascript" src="../scripts/validating.js"> </script>  
+    </head>
+    <body class="overallContainer">
+        <div class="top">
+            <div class="headerLeft">
+                <div class="headerTopTwoLeft">
+                    Create a Poll
+                </div>
+            </div>
+            <div class="headerRight right">
+                Hi Laura! <!--This will be the user's first name-->
+                <input type="button" value="Logout" onclick="document.location.href='mainPage.html' "/>
+            </div>
+            <div class="headerBottom">Create a new poll</div>
+        </div>
+        <div class="center">
+            <form class="createContainer" id="createPoll" action="./mgmt.html">
+                <div class="createOpenClose">
+                    <div>
+                        <div class="createOpenHead">Open:&nbsp;<input type="datetime-local" id="dateTimeOpen" name="dateTimeOpen" class="createOpenBox"/> </div><!--Validator does not like 'datetime-local' type-->
+                        <label id="msg_openDate" class="errorMessage errorColumn"></label>
+                    </div>
+                    <div>
+                        <div class="createCloseHead">Close:&nbsp;
+                        <input type="datetime-local" id="dateTimeClose" name="dateTimeClose" class="createCloseBox" /></div><!--Validator does not like 'datetime-local' type-->
+                        <label id="msg_closeDate" class="errorMessage errorColumn"></label>
+                    </div>
+                </div>
+                <div class="createQuestion">
+                    <div class="createQuestionHead">Question:&nbsp;
+                    </div>
+                    <textarea class="createQuestionBox" type="text" name="createQuestion" id="createQuestion" placeholder="Type your question..." maxlength="100" rows="" cols=""></textarea><!--Validator doesn't recognize the use of 'type', 'placeholder' or 'maxlength'-->
+                    <label id="msg_char" class="errorMessage errorColumn">
+                        <span class="wordCount" id="maximum">/100</span>
+                        <span class="wordCount" id="createQuestionCurrent"> 0</span>
+                    </label>
+                </div>
+                <div class="createAnswer">
+                    <div class="createAnswerHead">Answers:&nbsp;</div>
+                    <div class="createAnswerNum">
+                        <div class="createErrors">
+                            <div class="createAnswerNumText">1.&nbsp;</div>
+                            <textarea class="createAnswerBox" placeholder="Required" maxlength="50" name="createA1" id="createA1" rows="" cols=""></textarea><!--Validator doesn't recognize the use of 'placeholder' or 'maxlength'-->
+                            <label id="msg_charA1" class="errorColumn errorMessage">
+                                <span class="wordCount" id="maximumA1">/50</span>
+                                <span class="wordCount" id="createA1Current">0</span>
+                            </label>
+                        </div>
+                        <div class="createErrors">
+                            <div class="createAnswerNumText">2.&nbsp;</div>
+                            <textarea class="createAnswerBox" placeholder="Required" name="createA2" id="createA2" rows="" cols=""></textarea><!--Validator doesn't recognize the use of 'placeholder' or 'maxlength'-->
+                            <label id="msg_charA2" class="errorColumn errorMessage">
+                                <span class="wordCount" id="maximumA2">/50</span>
+                                <span class="wordCount" id="createA2Current">0</span>
+                            </label>
+                        </div>
+                        <div class="createErrors">
+                            <div class="createAnswerNumText">3.&nbsp;</div>
+                            <textarea class="createAnswerBox" placeholder="Optional" maxlength="50" name="createA3" id="createA3" rows="" cols=""></textarea><!--Validator doesn't recognize the use of 'placeholder' or 'maxlength'-->
+                            <label id="msg_charA3" class="errorColumn errorMessage">
+                                <span class="wordCount" id="maximumA3">/50</span>
+                                <span class="wordCount" id="createA3Current">0</span>
+                            </label>
+                        </div>
+                        <div class="createErrors">
+                            <div class="createAnswerNumText">4.&nbsp;</div>
+                            <textarea class="createAnswerBox" placeholder="Optional" maxlength="50" name="createA4" id="createA4" rows="" cols=""></textarea><!--Validator doesn't recognize the use of 'placeholder' or 'maxlength'-->
+                            <label id="msg_charA4" class="errorColumn errorMessage">
+                                <span class="wordCount" id="maximumA4">/50</span>
+                                <span class="wordCount" id="createA4Current">0</span>
+                            </label>
+                        </div>
+                        <div class="createErrors">
+                            <div class="createAnswerNumText">5.&nbsp;</div>
+                            <textarea class="createAnswerBox" placeholder="Optional" maxlength="50" name="createA5" id="createA5" rows="" cols=""></textarea><!--Validator doesn't recognize the use of 'placeholder' or 'maxlength'-->
+                            <label id="msg_charA5" class="errorColumn errorMessage">
+                                <span class="wordCount" id="maximumA5">/50</span>
+                                <span class="wordCount" id="createA5Current">0</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="createButtons">
+                    <div class="createButtonsLeft">
+                        <input type="submit" value="Create"/>
+                    </div>
+                    <div class="createButtonsMiddle">
+                        <input type="reset" value="Reset"/>
+                    </div>
+                    <div class="createButtonsRight">
+                        <input type="button" value="Cancel" onclick="document.location.href='mgmt.html' "/>
+                    </div>
+                    <div id="display_info" class="errorMessage"></div>
+                </div>
+            </form>
+        </div>
+        <div class="bottom">
+            <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Assignments/Assign3/basic_html_pages/create.html">Validate 'create.html'</a>
+        </div>
+        <script type = "text/javascript"  src = "../scripts/registrations.js" ></script>
+    </body>
+</html>

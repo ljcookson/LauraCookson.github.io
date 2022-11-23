@@ -1,0 +1,37 @@
+/*  File Name:  mystyle.css
+    Author:     Laura Cookson
+    Student ID: 200388154*/
+
+body{
+    background-color: linen;
+}
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#le2/*lab exercise 2*/{
+    /*I choose to change the colors that were originally defined for this step so that I could confirm that the change was made.*/
+    background-color: #a38adf;
+    border:thin dotted #691717;
+}
+
+.evenRow{
+    background-color: crimson;
+}
+
+ol{
+    list-style-type: upper-roman;
+}
+
+table, th, td{
+    border: 2px dotted wheat;
+}
+
+a:hover{
+    background-color: turquoise;
+}
+
+table{
+    text-align: center;
+}

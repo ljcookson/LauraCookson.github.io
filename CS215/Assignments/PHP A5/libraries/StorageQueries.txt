@@ -1,0 +1,19 @@
+Sign-up Form:
+    INSERT INTO Users (first_name, last_name, userName, pword, email, avatar) VALUES ("fname", "lname", "uname", "pword", "email", "avatar"); 
+    --values will be given by the user.--
+
+Poll Creation Form:
+    INSERT INTO Polls (openDateTime, closeDateTime, user_ID) VALUES ("dateTimeOpen", "dateTimeClose", "Users.user_ID"); 
+    --values will be given by the user.--
+
+    INSERT INTO Questions (question, poll_ID) VALUES ("createQuestion", "Polls.poll_ID");
+
+    INSERT INTO Answers (answer, question_ID) VALUES ("createA1", "Questions.question_ID");
+    INSERT INTO Answers (answer, question_ID) VALUES ("createA2", "Questions.question_ID");
+    INSERT INTO Answers (answer, question_ID) VALUES ("createA3", "Questions.question_ID");
+    INSERT INTO Answers (answer, question_ID) VALUES ("createA4", "Questions.question_ID");
+    INSERT INTO Answers (answer, question_ID) VALUES ("createA5", "Questions.question_ID");
+
+Poll Vote Page:
+    INSERT INTO Results (answer_ID) VALUES ("Answers.answer_ID");
+    UPDATE Polls SET lastVoteDateTime="votePollsTimeDate" WHERE poll_ID="poll_ID"; //lastVoteDateTime will come from the time index of when the vote was cast.  The poll_ID will come from the poll that was displayed for voting.

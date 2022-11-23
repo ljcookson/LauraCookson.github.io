@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>SignUp Page</title> 
+      <script type="text/javascript" src="./validate.js"> </script>
+      <link rel="stylesheet" type="text/css" href="../../CSS/CooksonLabs.css"/>  
+      <style>
+         .err_msg{ color:red;}
+      </style>
+   </head>
+
+   <body>
+      <header>
+         <nav class="lab_navigate">
+            <div class="navbar">
+                <a href="../../">Home Page</a>
+                <div class="dropdown">
+                    <button class="dropButton">Lab 9 Links&nbsp;<i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdownContent">
+                        <a href="./Signup.html">Sign-up Page</a>
+                        <a href="./validate.js">validate.js</a>
+                        <a href="./signup-r.js">signup-r.js</a>
+                        <a href="./Signup.php">Signup.php</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropButton">Labs&nbsp;<i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdownContent">
+                        <a href="../Lab01/">Lab 1</a>
+                        <a href="../Lab02/">Lab 2</a>
+                        <a href="../Lab03/">Lab 3</a>
+                        <a href="../Lab04/">Lab 4</a>
+                        <a href="../Lab04/signup.html">Lab 4 JS</a>
+                        <a href="../Lab05/">Lab 5</a>
+                        <a href="../Lab05/signup.html">Lab 5 DOM</a>
+                        <a href="../Lab06/">Lab 6</a>
+                        <a href="../Lab06/signup.html">Lab 6 DOM2</a>
+                        <a href="../Lab07/">Lab 7</a>
+                        <a href="../Lab08/">Lab 8</a>
+                        <a href="./">Lab 9</a>
+                        <a href="./Signup.html">Lab 9 PHP</a>
+                        <a href="../Lab10/">Lab 10</a>
+                        <a href="../Lab11/">Lab 11</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropButton">Assignments&nbsp;<i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdownContent">
+                        <a href="../../Assignments/Assign1/200388154-Assignment1.pdf">Assignment 1</a>
+                        <a href="../../Assignments/Assign2/basic_html_pages/mainPage.html">Assignment 2</a>
+                        <a href="../../Assignments/Assign3/basic_html_pages/mainPage.html">Assignment 3</a>
+                        <a href="../../Assignments/Assign4/basic_html_pages/mainPage.html">Assignment 4</a>
+                        <a href="../../Assignments/Assign5/">Assignment 5</a>
+                        <a href="../../Assignments/Assign6/">Assignment 6</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropButton">Validations&nbsp;<i class="fa-solid fa-caret-down"></i></button>
+                    <div class="dropdownContent">
+                        <!--These validations are for the files that are connected to this page-->
+                        <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Labs/Lab09/">index.html</a>
+                        <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Labs/Lab09/Signup.html">Signup.html</a>
+                        <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Labs/Lab09/validate.js">validate.js</a>
+                        <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Labs/Lab09/signup-r.js">signup-r.js</a>
+                        <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Labs/Lab09/Signup.php">signup-r.js</a>
+                    </div>
+                </div>
+            </div>
+         </nav>
+     </header>
+      <h1>Sign Up Page</h1>
+      <form action="Signup.php" id="Signup" method="post" enctype="multipart/form-data">
+         <table>
+            <tr class="clearTableFormat">
+               <td colspan="2" class="clearTableFormat"><label id="email_msg" class="err_msg"></label> </td>
+            </tr>
+            <tr>
+               <td>Email: </td>
+               <td><input type="text" name="email" size="30" /></td> 
+            </tr>
+            <tr class="clearTableFormat">
+               <td colspan="2" class="clearTableFormat"><label id="uname_msg" class="err_msg"></label></td>
+            </tr>
+            <tr>
+               <td>Username: </td>
+               <td><input type="text" name="uname" size="30" /></td>
+            </tr>
+            <tr class="clearTableFormat">
+               <td colspan="2" class="clearTableFormat"><label id="photo_msg" class="err_msg"></label> </td>
+            </tr>
+            <tr>
+               <td>Photo: </td>
+               <td> <input type="file"  name="fileToUpload" id="fileToUpload"></td>
+            </tr>
+         </table>
+         <br />
+         <p class="buttons">
+            <input type="submit" value="Signup" />
+            <input type="reset" value="Reset" />
+         </p>
+      </form>
+      <script type = "text/javascript"  src = "./Signup-r.js" ></script>
+      <!--<p><a href = "./">Back to index page</a></p>-->
+      <footer>
+         <p><a style="float: left;" href = "../../">Back to home page</a>
+         &copy; 2022 Laura Cookson.  All right reserved</p>
+      </footer>
+   </body>
+</html>

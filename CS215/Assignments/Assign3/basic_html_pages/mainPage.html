@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"> <!--We were directed to validate using XHTML1.1, so I am using the headers from Labs 1 & 2-->
+    <head>
+        <!--<meta charset = "utf-8"> This causes two errors, without it I get two warnings.  I would welcome recommendations-->
+        <title>Cooky Polls - Home</title>
+        <link rel="stylesheet" type="text/css" href="../css/cookson.css"/>
+        <script type="text/javascript" src="../scripts/validating.js"> </script>  
+    </head>
+    <body class="overallContainer">
+        <div class="top">
+            <div class="headerLeft">
+                <div class="headerTopTwoLeft">Welcome to Cooky Polls!</div>
+            </div>
+            <div class="headerRight right">
+                <img class="headerImage" src="../images/Icon1.png" alt="Survey Icon" />
+            </div>
+            <div class="headerBottom">Vote for the five most recent polls created by our Users</div>
+        </div>
+        <div class="center">
+            <div class="mainContainer">
+                <div class="mainActivePolls">
+                    <div class="mainHeaders">
+                        Most Recent Active Polls
+                    </div>
+                    <div class="mainActivePollsBody"><!--This data will be replaced with the questions of the polls-->
+                        <input type="radio" name="polls" class="mainActivePollsBodyRadio" id="Question1"/>
+                        <label for="Question1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </label>
+                        <input type="radio" name="polls" class="mainActivePollsBodyRadio" id="Question2"/>
+                        <label for="Question2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </label>
+                        <input type="radio" name="polls" class="mainActivePollsBodyRadio" id="Question3"/>
+                        <label for="Question3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </label>
+                        <input type="radio" name="polls" class="mainActivePollsBodyRadio" id="Question4"/>
+                        <label for="Question4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </label>
+                        <input type="radio" name="polls" class="mainActivePollsBodyRadio" id="Question5"/>
+                        <label for="Question5">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </label>
+                    </div>
+                    <div class="mainActivePollsButtons">
+                        <div class="mainActivePollsButtonsLeft">
+                            <input type="button" value="Vote" onclick="document.location.href='vote.html' "/>
+                        </div>
+                        <div class="mainActivePollsButtonsRight">
+                            <input type="button" value="Results" onclick="document.location.href='results.html' "/>
+                        </div>
+                    </div>
+                </div>
+                <form id="LoginForm" action="./mgmt.html" method="get" class="mainLogin">
+                    <div  class="mainHeaders">
+                        Login below to access your polls:
+                    </div>
+                    <div class="mainLoginBody"> 
+                        <div class="mainErrors">
+                            <label id="msg_userName" style="text-align: center" class="errorMessage"></label>
+                            <p class="mainLoginBodyFieldName">UserName:</p>
+                            <input class="mainLoginBodyFieldBox" type="text" id="uname" name="uname"/>
+                        </div>
+                        <div class="mainErrors">
+                            <label id="msg_password" style="text-align: center" class="errorMessage"></label>
+                            <p class="mainLoginBodyFieldName">Password:</p>
+                            <input class="mainLoginBodyFieldBox" type="password" id="pword" name="pword"/>
+                        </div>
+                    </div>
+                    <div class="mainLoginButtons">
+                        <div class="mainLoginButtonsLeft">
+                            <div class="mainLoginButtonsLeftLeft">
+                                <div id="display_info" class="errorMessage"></div>
+                            </div>
+                            <div class="mainLoginButtonsLeftRight">
+                                <input type="submit" value="Login"/>
+                            </div>
+                        </div>
+                        <div class="mainLoginButtonsRight">
+                            <a href="mainPage.html">Forgot My Password</a>
+                        </div>
+                    </div>
+                </form>
+                <div class="mainSignup">
+                    <p class="mainHeaders">Want to create your own polls?&nbsp;<input type="button" value="Sign-up Here" onclick="document.location.href='signUp.html' "/></p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Assignments/Assign3/basic_html_pages/mainPage.html">Validate 'mainPage.html'</a> | 
+            <a href="https://validator.w3.org/check?uri=http://www.webdev.cs.uregina.ca/~ljc806/Assignments/Assign3/css/cookson.css">Validate 'cookson.css'</a>
+        </div>
+
+        <script type = "text/javascript"  src = "../scripts/registrations.js" ></script>
+    </body>
+</html>

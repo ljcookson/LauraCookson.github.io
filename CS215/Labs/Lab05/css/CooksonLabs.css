@@ -1,0 +1,181 @@
+/*  This is my CSS file for my personalized styling
+    File Name:  cooksonLabs.css
+    Author:     Laura Cookson
+    Student ID: 200388154*/
+
+    header{
+        border: thick solid gray;
+        outline: 8px groove darkgray;
+        background-color: lightgray;
+        width:auto;
+        margin-bottom: 10px;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: auto auto auto auto auto; 
+        color:black;
+    }
+    .left{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        float: left;
+        margin-right: auto;
+    }
+    .middle, .lab_middle{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        max-height: 120px;
+        margin: auto;
+    }
+    .right{
+        grid-column: 3/4;
+        grid-row: 1/2;
+        float: right;
+        margin-left: auto;
+    }
+    nav{
+        grid-column: 1/4;
+        grid-row: 2/3;
+        border-top: thick solid gray;
+        text-align: center;
+    }
+    .lab_navigate{
+        grid-row: 1/2;
+        border-top: none;
+    }
+    body{
+        font-family: 'Times New Roman', Times, serif;
+        background-color: lavenderblush;
+    }
+    h1{
+        color: darkblue;
+        text-shadow: 2px 2px 5px royalblue;
+        text-align: center;
+    }
+    h2{
+        color:indigo;
+        font-size: 150%;
+        margin: 0px;
+        font-weight: bold;
+        text-decoration:underline dotted;
+        text-align: center;
+    }
+    img{
+        max-width: 100%;
+        max-height: 120px;
+        background-size: contain;
+        display: block;
+        width: 100%;
+        height: 100%;
+        width: auto;
+    }
+    table, td, th{
+        border: 2px double darkblue;
+        border-collapse: collapse;
+        font-size: 20px;
+    }
+    table{
+        width: auto;
+        background-color: lavender;
+        margin: auto;
+        text-align:initial;
+    }
+    th{
+        background-color: indigo;
+        color: lavender;
+        font-size: 18px;
+    }
+    input{
+        height: auto;
+    }
+    input[type=submit], input[type=reset]{
+        background-color: indigo;
+        border-radius: 14px;
+        color: lavender;
+        cursor:pointer;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+        padding: 5px 10px;
+        width: auto;
+    }
+     footer{
+        text-align: right;
+        border: 6px groove darkgray;
+        background-color: lightgray;
+        height: auto;
+        margin-top: 5px;
+     }
+     footer p{
+       margin: 5px 15px;
+     }
+     .buttons{
+        text-align: center;
+     }
+
+    /* from Lab 5 Signup Page */
+    .err_msg{ 
+        color:red;
+     }
+
+     /*navigation drop down Sourced from: https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp*/
+     /*navbar container*/
+     .navbar{
+        overflow: hidden;
+        background-color: lightgray;
+     }
+     /*links inside navbar*/
+     .dropdown .dropButton, .navbar a{
+        font-size: 18px;
+        color: black;
+        text-align: center;
+        padding: 5px;
+     }.navbar a{
+        float: left;
+        text-align: center;
+        text-decoration: none;
+     }
+     /*dropdown container*/
+     .dropdown{
+        float: left;
+        overflow: hidden;
+     }
+     /*dropdown button*/
+     .dropdown .dropButton{
+        border: none;
+        outline: none;
+        background-color: inherit;
+        font-family: inherit; /*Important for vertical align on mobile phones*/
+        margin: 0; /*Important for vertical align on mobile phones*/
+     }
+     /*Add a background color to navbar links on hover*/
+     .navbar a:hover, .dropdown:hover .dropButton{
+        background-color: indigo;
+        color: white;
+     }
+     /*Dropdown content (hidden by default)*/
+     .dropdownContent{
+        display: none;
+        position: absolute;
+        background-color: lavenderblush;
+        border: 1px solid black;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+     }
+     /*Links inside dropdown*/
+     .dropdownContent a{
+        float: none;
+        color: black;
+        padding: 5px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+     }
+     /*Add a background color to dropdown links on hover*/
+     .dropdownContent a:hover{
+        background-color:blue;
+     }
+     /*Show the dropdown menu on hover*/
+     .dropdown:hover .dropdownContent{
+        display: block;
+     }
